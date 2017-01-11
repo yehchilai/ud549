@@ -1,4 +1,4 @@
-describe('Address book', function(){
+describe('Address Book.', function(){
 
   var addressBook;
   var contact;
@@ -21,5 +21,29 @@ describe('Address book', function(){
     addressBook.deleteContact(0);
     expect(addressBook.getContact(0)).not.toBeDefined();
 
+  });
+});
+
+describe('Async Address Book.', function(){
+  var addressBook = new AddressBook();
+
+  beforeEach(function(done){
+    addressBook.getInitialContacts(function(){
+      done();
+    });
+  });
+
+  it('should grab initial contacts', function(done){
+
+    expect(addressBook.initialComplete).toBe(true);
+    done();
+
+    // addressBook.getInitialContacts();
+    // expect(addressBook.initialComplete).toBe(true);
+    /* Do not work
+    addressBook.getInitialContacts(function(){
+      expect(addressBook.initialComplete).toBe(true);
+    });
+    */
   });
 });

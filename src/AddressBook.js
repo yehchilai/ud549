@@ -15,7 +15,7 @@ AddressBook.prototype.getInitialContacts = function(cb) {
     if(cb){
       return cb();
     }
-  },30);
+  },3);
 };
 
 AddressBook.prototype.addContact = function(Contact) {
