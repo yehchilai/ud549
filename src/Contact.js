@@ -1,0 +1,5 @@
+var Contact = function(){
+
+}
+
+
